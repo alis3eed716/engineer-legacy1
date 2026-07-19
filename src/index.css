@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --font-heading: 'IBM Plex Sans Arabic', 'Amiri', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'IBM Plex Sans Arabic', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Amiri', 'Cormorant Garamond', serif;
+    --font-calligraphy: 'Aref Ruqaa', 'Amiri', serif;
+    --font-latin: 'Cormorant Garamond', 'Inter', serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+/* ===== Cyber-Majesty Theme ===== */
+:root {
+  --obsidian: #0A0A0A;
+  --charcoal: #171717;
+  --gold: #D4AF37;
+  --gold-soft: #E8C766;
+  --gold-deep: #9C7C1E;
+  --silver: #9CA3AF;
+}
+
+html, body, #root {
+  min-height: 100%;
+  background: var(--obsidian);
+}
+
+body {
+  color: #EDEDED;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom gold scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4AF37, #9C7C1E);
+  border-radius: 10px;
+  border: 2px solid #050505;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E8C766;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #fff;
+}
+
+/* Focus visibility for a11y */
+:focus-visible {
+  outline: 2px solid #9CA3AF;
+  outline-offset: 3px;
+}
+
+@layer components {
+  .gold-text {
+    color: #D4AF37;
+  }
+  .muted-en {
+    color: #9CA3AF;
+    font-family: var(--font-latin);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+  .glass {
+    background: rgba(23, 23, 23, 0.55);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+  }
+  .gold-rule {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, #D4AF37, transparent);
+  }
+  .gold-btn {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #D4AF37;
+    color: #D4AF37;
+    transition: color 0.5s ease;
+  }
+  .gold-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, #9C7C1E, #E8C766, #D4AF37);
+    transform: translateY(101%);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+  }
+  .gold-btn:hover {
+    color: #0A0A0A;
+  }
+  .gold-btn:hover::before {
+    transform: translateY(0);
+  }
+  .gold-glow {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.18), 0 0 80px rgba(212, 175, 55, 0.08);
+  }
+  .gallery-item {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease, box-shadow 0.6s ease;
+    filter: grayscale(45%) brightness(0.85);
+  }
+  .gallery-item:hover {
+    transform: scale(1.04);
+    filter: grayscale(0%) brightness(1.05);
+    box-shadow: 0 0 0 1px rgba(212,175,55,0.6), 0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(212,175,55,0.25);
+    z-index: 5;
+  }
+}
+
+/* Certificate light sweep */
+.cert-sweep::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(212,175,55,0.18), transparent);
+  transform: skewX(-20deg);
+  animation: sweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes sweep {
+  0%, 100% { left: -60%; }
+  50% { left: 120%; }
+}
+
+/* Gold ring pulse */
+@keyframes ringPulse {
+  0% { transform: scale(0.8); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.ring-pulse {
+  animation: ringPulse 3s ease-out infinite;
+}
+
+/* AOS overrides for dark gold theme */
+[data-aos] {
+  pointer-events: auto;
+}
+
+/* Fancybox dark gold theme */
+.fancybox__container {
+  --fancybox-bg: rgba(5,5,5,0.92);
+}
+.fancybox__slide {
+  padding: 40px;
+}
+.f-button {
+  background: rgba(212,175,55,0.12) !important;
+  color: #D4AF37 !important;
+  border: 1px solid rgba(212,175,55,0.4) !important;
+}
+.f-button:hover {
+  background: rgba(212,175,55,0.25) !important;
+}
+.fancybox__caption {
+  color: #D4AF37 !important;
+  font-family: var(--font-display) !important;
+}
