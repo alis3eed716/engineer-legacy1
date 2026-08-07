@@ -19,6 +19,9 @@ const PHOTOS = [
   '11.jpeg',
   '12.jpeg',
   '13.jpeg',
+  '14.jpeg',
+  '15.jpeg',
+  '16.jpeg',
 ];
 
 // Vary spans to create a masonry feel.
